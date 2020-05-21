@@ -1,8 +1,8 @@
 # ----- 信息 -----
-# @filename start.sh
+# @filename start-redis.sh
 # @version 1.0
 # @author qianye.zheng
-# @description  自身脚本启动
+# @description  redis启动器 (启动/停止，无参-执行重启)
 
 # 解决远程ssh执行脚本失败问题
 source /etc/profile
@@ -12,7 +12,7 @@ cd `dirname $0`
 
 # 变量定义
 # 应用名称，名称只是作为显示而存在，与进程查找并无关系
-declare -r APP_NAME=""
+declare -r APP_NAME="redis"
 # 启动命令
 declare -r STARTUP_CMD="src/redis-server redis.conf"
 # 进程ID文件，启动多个进程则用不同的pid文件
