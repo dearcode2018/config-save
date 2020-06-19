@@ -1,0 +1,6 @@
+[2020-03-30 15:53:14] [Msg] Import start
+[2020-03-30 15:53:14] [Msg] Import type - Text file
+[2020-03-30 15:53:14] [Msg] Import from - C:\Users\dell\Desktop\a.txt
+[2020-03-30 15:53:15] [Msg] Import table [t_org_architecture]
+[2020-03-30 15:53:22] [Msg] Processed:15001, Added:15001, Updated:0, Deleted:0, Errors:0
+[2020-03-30 15:53:22] [Msg] Finished - Successfully

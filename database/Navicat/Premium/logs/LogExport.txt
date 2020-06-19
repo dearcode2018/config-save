@@ -1,0 +1,5 @@
+[2020-03-30 15:56:22] [Msg] Table Type - Excel file
+[2020-03-30 15:56:22] [Msg] Getting and Exporting data ...
+[2020-03-30 15:56:22] [Msg] Export query [Untitled Query]
+[2020-03-30 15:56:22] [Msg] Export to - C:\Users\dell\Desktop\a.xlsx
+[2020-03-30 15:57:31] [Msg] Finished - Successfully
