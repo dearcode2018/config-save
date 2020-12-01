@@ -1,5 +1,5 @@
 # ----- 信息 -----
-# @filename start.sh
+# @filename fast-dfs-tracker.sh
 # @version 1.0
 # @author qianye.zheng
 # @description  自身脚本启动
@@ -12,11 +12,11 @@ cd `dirname $0`
 
 # 变量定义
 # 应用名称，名称只是作为显示而存在，与进程查找并无关系
-declare -r APP_NAME=""
+declare -r APP_NAME="fdfs_trackerd"
 # 启动命令
-declare -r STARTUP_CMD="src/redis-server redis.conf"
+declare -r STARTUP_CMD="service fdfs_trackerd"
 # 进程ID文件，启动多个进程则用不同的pid文件
-PID_FILE="process.pid"
+PID_FILE="process-tracker.pid"
 # 检查次数
 CHECK_COUNT=3
 
@@ -55,65 +55,24 @@ check_pid() {
 
 # 启动
 start() {
-  check_pid
-  if [[ ${PID_FLAG} -ne 0 ]]; then
-    echo "WARN: ${APP_NAME} is already running, PID is ${PID}."
-  else
-    echo "starting ${APP_NAME} ..."
-    rm -f ${PID_FILE}
 	# 调用其他脚本
-     nohup ${STARTUP_CMD} > /dev/null 2>&1 &
-	 # 将当前原生命令的执行的进程ID写入文件，调用其他脚本则无需写，一般目标脚本都会生成进程ID文件
-     echo $! > ${PID_FILE}
-	 # 读取目标进程ID文件
-	 PID=`cat "${PID_FILE}" | awk '{print $1}'`
-    echo "${APP_NAME} has started, PID is ${PID}."
-  fi
+	${STARTUP_CMD} start
+
 }
 
 # 停止
 stop() {
-  check_pid
-  if [[ ${PID_FLAG} -ne 0 ]]; then
-    echo "stoping ${APP_NAME} ..."
-    # 循环检查进程多次，每次睡眠等待2秒
-    for((i=1;i<=${CHECK_COUNT};i++))
-      do
-        kill ${PID} # 或者执行该软件的停止脚本，若没有则通过kill方式关闭
-	    sleep 2
-	    # 检查进程状态
-	    check_pid
-        if [[ ${PID_FLAG} -eq 0 ]]; then
-          break
-	    fi
-      done
-      # 如果以上多次正常关闭进程操作都失败，则强制关闭
-      if [[ ${PID_FLAG} -ne 0 ]]; then
-        echo "force the process to kill ..."
-        kill -9 ${PID}
-        sleep 2
-      else
-        echo "${APP_NAME} has stopped!"
-    fi
-  else
-    echo "WARN: ${APP_NAME} is not running."
-  fi
+	${STARTUP_CMD} stop
 }
 
 # 输出运行状态
 status() {
-  check_pid
-  if [[ ${PID_FLAG} -eq 0 ]]; then
-    echo "${APP_NAME} is not running."
-  else
-    echo "${APP_NAME} is runing, PID is $PID."
-  fi
+	ps -ef | grep ${APP_NAME}
 }
 
 # 重启
 restart(){
-  stop
-  start
+${STARTUP_CMD} restart
 }
 
 # 根据输入参数，选择执行对应方法，不输入则执行使用说明

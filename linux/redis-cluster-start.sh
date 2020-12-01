@@ -1,5 +1,5 @@
 # ----- 信息 -----
-# @filename start-redis-cluster.sh
+# @filename redis-cluster-start.sh
 # @version 1.0
 # @author qianye.zheng
 # @description  redis集群启动器 (启动/停止，无参-执行重启)

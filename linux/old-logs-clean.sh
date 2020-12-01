@@ -1,7 +1,7 @@
 # ----- 信息 -----
-# @filename oldLogsClean.sh
+# @filename old-logs-clean.sh
 # @version 1.0
-# @author qye.zheng
+# @author qianye.zheng
 # @description 清理日志文件
 
 #!/bin/bash

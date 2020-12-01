@@ -1,8 +1,8 @@
 # ----- 信息 -----
-# @filename start-redis.sh
+# @filename shell-template.sh
 # @version 1.0
 # @author qianye.zheng
-# @description  redis启动器 (启动/停止，无参-执行重启)
+# @description  自身脚本启动
 
 # 解决远程ssh执行脚本失败问题
 source /etc/profile
@@ -11,24 +11,14 @@ source /etc/profile
 cd `dirname $0`
 
 # 变量定义
-# 应用名称，名称只是作为显示而存在，与进程查找并无关系
-declare -r APP_NAME="redis"
+
+declare -r APP_NAME=""
 # 启动命令
-declare -r STARTUP_CMD="src/redis-server redis.conf"
+declare -r STARTUP_CMD=""
 # 进程ID文件，启动多个进程则用不同的pid文件
 PID_FILE="process.pid"
 # 检查次数
 CHECK_COUNT=3
-
-# 创建目录
-#mkdir -p ${HOME_PATH}
-#mkdir -p ${LOG_PATH}
-
-# 进入应用所在目录（虽然都是绝对路径，但有些应用需要进入应用目录才能启动成功）
-#cd ${HOME_PATH}
-
-# 进程状态标识变量，0-不存在, 1-存在
-PID_FLAG=0
 
 # 使用说明，用来提示输入参数
 usage() {
