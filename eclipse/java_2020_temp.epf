@@ -244,7 +244,7 @@
 /instance/com.genuitec.eclipse.easie.tomcat8/TOMCAT_BASE=C\:\\software\\apache-tomcat-8.0.17
 /instance/com.genuitec.eclipse.easie.tomcat8/TOMCAT_HOME=C\:\\software\\apache-tomcat-8.0.17
 /instance/com.genuitec.eclipse.easie.tomcat8/TOMCAT_TEMP=C\:\\software\\apache-tomcat-8.0.17\\temp
-/instance/com.genuitec.eclipse.editor.ui/com.genuitec.eclipse.editor.ui.web.WebFragmentDeploymentDescrEditor/InstanceByEditorInputType/org.eclipse.jdt.internal.ui.javaeditor.JarEntryEditorInput/LastActivePage=Source
+/instance/com.genuitec.eclipse.easie.tomcat8/migration.userInformed=3ec075109369d9ea67616a13886bf464; 70f9fa4be6e2f4e12e1cd28a36d5f173
 /instance/com.genuitec.eclipse.examples/repository_added=true
 /instance/com.genuitec.eclipse.featureintro/LAST_SHOWN=1510709492779
 /instance/com.genuitec.eclipse.featureintro/features.actually_displayed=true
@@ -1454,6 +1454,7 @@
 /instance/org.eclipse.mylyn.tasks.ui/org.eclipse.mylyn.tasks.ui.welcome.message=true
 /instance/org.eclipse.pde.api.tools/API_USE_SCAN_LOCATION=
 /instance/org.eclipse.pde.api.tools/knownEEFragments=
+/instance/org.eclipse.pde.core/platform_path=D\:\\Program Files\\MyEclipse2013
 /instance/org.eclipse.pde.core/workspace_target_handle=local\:1551077619084.target
 /instance/org.eclipse.pde.ui/Preferences.MainPage.overwriteBuildFilesOnExport=prompt
 /instance/org.eclipse.rse.core/org.eclipse.rse.systemtype.local.systemType.defaultUserId=Administrator
